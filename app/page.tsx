@@ -1,7 +1,13 @@
+import { DashboardLayout } from "../components/layout/dashboard-layout";
+
+import { PageHeader } from "../components/shared/page-header";
+
 import { KpiCard } from "../components/cards/kpi-card";
 import { SummaryCard } from "../components/cards/summary-card";
-import { DashboardLayout } from "../components/layout/dashboard-layout";
-import { PageHeader } from "../components/shared/page-header";
+
+import { LhrBarChart } from "../components/charts/lhr-bar-chart";
+import { TocBarChart } from "../components/charts/toc-bar-chart";
+import { TerritoryRankingChart } from "../components/charts/territory-ranking-chart";
 
 import { territories } from "../data/territories";
 import { outletSummary } from "../data/outlets";
@@ -17,35 +23,27 @@ export default function HomePage() {
       />
 
       <section className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
-        <KpiCard
-          title="Territories"
-          value={territories.length}
-        />
-
-        <KpiCard
-          title="RO"
-          value={outletSummary.totalRO}
-        />
-
-        <KpiCard
-          title="AO"
-          value={outletSummary.totalAO}
-        />
-
-        <KpiCard
-          title="NOO"
-          value={outletSummary.totalNOO}
-        />
-
+        <KpiCard title="Territories" value={territories.length} />
+        <KpiCard title="RO" value={outletSummary.totalRO} />
+        <KpiCard title="AO" value={outletSummary.totalAO} />
+        <KpiCard title="NOO" value={outletSummary.totalNOO} />
         <KpiCard
           title="Institutions"
           value={institutionSummary.totalInstitution}
         />
-
         <KpiCard
           title="Communities"
           value={communitySummary.totalCommunity}
         />
+      </section>
+
+      <section className="mt-8 grid gap-6 lg:grid-cols-2">
+        <LhrBarChart />
+        <TocBarChart />
+      </section>
+
+      <section className="mt-8">
+        <TerritoryRankingChart />
       </section>
 
       <section className="mt-8 grid gap-4 md:grid-cols-2">
