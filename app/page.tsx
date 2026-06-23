@@ -8,6 +8,7 @@ import { SummaryCard } from "../components/cards/summary-card";
 
 import { ExecutiveScorecard } from "../components/executive/executive-scorecard";
 import { RiskDashboard } from "../components/executive/risk-dashboard";
+import { OpportunityDashboard } from "../components/executive/opportunity-dashboard";
 
 import { ExecutiveSummarySection } from "../components/analytics/executive-summary-section";
 
@@ -64,8 +65,9 @@ export default function HomePage() {
         />
       </section>
 
-      <section className="mt-8">
+      <section className="mt-8 grid gap-6 lg:grid-cols-2">
         <RiskDashboard />
+        <OpportunityDashboard />
       </section>
 
       <section className="mt-8">
@@ -84,22 +86,22 @@ export default function HomePage() {
       <section className="mt-8 grid gap-4 md:grid-cols-2">
         <SummaryCard
           title="Top Opportunity Area"
-          content="Kertosono menjadi wilayah dengan kombinasi LHR, TOC, dan outlet opportunity tertinggi."
+          content="Kertosono menjadi wilayah dengan kombinasi LHR, TOC, Institution, Community, dan Outlet Opportunity tertinggi."
         />
 
         <SummaryCard
           title="Top Institutional Market"
-          content="Pare memiliki konsentrasi institusi pendidikan dan komunitas belajar terbesar."
+          content="Pare memiliki konsentrasi institusi pendidikan terbesar dan menjadi prioritas institutional activation."
         />
 
         <SummaryCard
           title="Top Community Market"
-          content="Kediri Kota dan Pare memiliki komunitas paling aktif untuk aktivasi market."
+          content="Kediri Kota dan Pare memiliki basis komunitas paling aktif untuk program engagement."
         />
 
         <SummaryCard
           title="Strategic Focus"
-          content="Fokus utama pada NOO Development, Institutional Activation, dan Community Engagement."
+          content="Prioritas utama adalah Kertosono, Pare, Kediri Kota, dan Nganjuk Kota untuk akselerasi market development."
         />
       </section>
 
