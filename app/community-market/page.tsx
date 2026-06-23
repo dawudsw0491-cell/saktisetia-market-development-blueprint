@@ -6,7 +6,23 @@ import { BusinessGlossary } from "../../components/shared/business-glossary";
 import { KpiCard } from "../../components/cards/kpi-card";
 import { SummaryCard } from "../../components/cards/summary-card";
 
+import {
+  communitySummary,
+  communityOpportunities,
+} from "../../data/communities";
+
+import {
+  CommunityOpportunityChart,
+} from "../../components/charts/community-opportunity-chart";
+
+import {
+  CommunityOpportunityTable,
+} from "../../components/tables/community-opportunity-table";
+
 export default function CommunityMarketPage() {
+  const topCommunity =
+    communityOpportunities[0];
+
   return (
     <DashboardLayout>
       <PageHeader
@@ -14,63 +30,55 @@ export default function CommunityMarketPage() {
         subtitle="Analisis komunitas, engagement, dan peluang aktivasi market berbasis komunitas."
       />
 
-      <section className="grid gap-4 md:grid-cols-4">
+      <section className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
         <KpiCard
           title="Communities"
-          value="125"
+          value={communitySummary.totalCommunity}
         />
 
         <KpiCard
-          title="Community Leaders"
-          value="78"
+          title="UMKM"
+          value={communitySummary.totalUmkm}
         />
 
         <KpiCard
-          title="Active Communities"
-          value="94"
+          title="Organization"
+          value={communitySummary.totalOrganization}
         />
 
         <KpiCard
-          title="Activation Programs"
-          value="36"
+          title="Association"
+          value={communitySummary.totalAssociation}
+        />
+
+        <KpiCard
+          title="Business"
+          value={communitySummary.totalBusinessCommunity}
+        />
+
+        <KpiCard
+          title="Event Partner"
+          value={communitySummary.totalEventPartner}
         />
       </section>
 
       <section className="mt-8">
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h3 className="mb-4 text-lg font-semibold">
-            Executive Summary
-          </h3>
+        <CommunityOpportunityChart />
+      </section>
 
-          <p className="text-sm text-slate-600">
-            Community Market menjadi penggerak utama
-            awareness, engagement, dan word of mouth
-            marketing melalui komunitas lokal,
-            organisasi sosial, komunitas pendidikan,
-            komunitas olahraga, dan komunitas hobi.
-          </p>
-        </div>
+      <section className="mt-8">
+        <CommunityOpportunityTable />
       </section>
 
       <section className="mt-8 grid gap-4 md:grid-cols-2">
         <SummaryCard
-          title="Top Community Area"
-          content="Kediri Kota dan Pare memiliki konsentrasi komunitas paling aktif untuk market activation."
+          title="Top Community Territory"
+          content={`${topCommunity.territoryName} memiliki peluang komunitas tertinggi dengan score ${topCommunity.opportunityScore}.`}
         />
 
         <SummaryCard
-          title="Community Engagement"
-          content="Fokus meningkatkan hubungan dengan community leader dan key opinion leader."
-        />
-
-        <SummaryCard
-          title="Activation Strategy"
-          content="Mengintegrasikan event, sponsorship, dan edukasi produk pada komunitas prioritas."
-        />
-
-        <SummaryCard
-          title="Growth Opportunity"
-          content="Komunitas menjadi sumber lead generation dan customer advocacy yang berkelanjutan."
+          title="Community Strategy"
+          content="Fokus pada UMKM, organisasi, asosiasi bisnis, dan komunitas edukasi untuk memperkuat market engagement."
         />
       </section>
 
