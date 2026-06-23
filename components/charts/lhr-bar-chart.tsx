@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  ResponsiveContainer,
   BarChart,
   Bar,
   XAxis,
@@ -19,22 +18,21 @@ export function LhrBarChart() {
         LHR Territory Comparison
       </h3>
 
-      <div
-        className="h-[320px] w-full"
-        style={{ minWidth: 300 }}
-      >
-        <ResponsiveContainer>
-          <BarChart data={lhrMetrics}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="territoryName" />
-            <YAxis />
-            <Tooltip />
-            <Bar
-              dataKey="lhrPercentage"
-              fill="#2563eb"
-            />
-          </BarChart>
-        </ResponsiveContainer>
+      <div className="overflow-x-auto">
+        <BarChart
+          width={700}
+          height={320}
+          data={lhrMetrics}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="territoryName" />
+          <YAxis />
+          <Tooltip />
+          <Bar
+            dataKey="lhrPercentage"
+            fill="#2563eb"
+          />
+        </BarChart>
       </div>
     </div>
   );

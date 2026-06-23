@@ -23,14 +23,31 @@ export default function HomePage() {
       />
 
       <section className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
-        <KpiCard title="Territories" value={territories.length} />
-        <KpiCard title="RO" value={outletSummary.totalRO} />
-        <KpiCard title="AO" value={outletSummary.totalAO} />
-        <KpiCard title="NOO" value={outletSummary.totalNOO} />
+        <KpiCard
+          title="Territories"
+          value={territories.length}
+        />
+
+        <KpiCard
+          title="RO"
+          value={outletSummary.totalRO}
+        />
+
+        <KpiCard
+          title="AO"
+          value={outletSummary.totalAO}
+        />
+
+        <KpiCard
+          title="NOO"
+          value={outletSummary.totalNOO}
+        />
+
         <KpiCard
           title="Institutions"
           value={institutionSummary.totalInstitution}
         />
+
         <KpiCard
           title="Communities"
           value={communitySummary.totalCommunity}
