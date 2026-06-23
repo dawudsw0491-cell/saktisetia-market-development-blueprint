@@ -6,6 +6,8 @@ import { BusinessGlossary } from "../components/shared/business-glossary";
 import { KpiCard } from "../components/cards/kpi-card";
 import { SummaryCard } from "../components/cards/summary-card";
 
+import { ExecutiveScorecard } from "../components/executive/executive-scorecard";
+
 import { ExecutiveSummarySection } from "../components/analytics/executive-summary-section";
 
 import { LhrBarChart } from "../components/charts/lhr-bar-chart";
@@ -25,7 +27,11 @@ export default function HomePage() {
         subtitle="Territory Intelligence, Outlet Development, Institutional Market, Community Market, Event Strategy, dan Growth Roadmap."
       />
 
-      <section className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
+      <section className="mt-8">
+        <ExecutiveScorecard />
+      </section>
+
+      <section className="mt-8 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
         <KpiCard
           title="Territories"
           value={territories.length}
