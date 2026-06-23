@@ -9,6 +9,7 @@ import { SummaryCard } from "../components/cards/summary-card";
 import { ExecutiveScorecard } from "../components/executive/executive-scorecard";
 import { RiskDashboard } from "../components/executive/risk-dashboard";
 import { OpportunityDashboard } from "../components/executive/opportunity-dashboard";
+import { StrategicRecommendation } from "../components/executive/strategic-recommendation";
 
 import { ExecutiveSummarySection } from "../components/analytics/executive-summary-section";
 
@@ -68,6 +69,10 @@ export default function HomePage() {
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
         <RiskDashboard />
         <OpportunityDashboard />
+      </section>
+
+      <section className="mt-8">
+        <StrategicRecommendation />
       </section>
 
       <section className="mt-8">
