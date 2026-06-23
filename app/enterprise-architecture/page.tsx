@@ -9,12 +9,19 @@ import { DataArchitecture } from "../../components/architecture/data-architectur
 import { TechnologyArchitecture } from "../../components/architecture/technology-architecture";
 import { TransformationRoadmap } from "../../components/architecture/transformation-roadmap";
 
+import { CapabilityBasedPlanning } from "../../components/architecture/capability-based-planning";
+import { ArchitecturePrinciples } from "../../components/architecture/architecture-principles";
+import { StakeholderMap } from "../../components/architecture/stakeholder-map";
+import { ValueStreamMap } from "../../components/architecture/value-stream-map";
+import { TargetArchitecture } from "../../components/architecture/target-architecture";
+import { ArchitectureGovernance } from "../../components/architecture/architecture-governance";
+
 export default function EnterpriseArchitecturePage() {
   return (
     <DashboardLayout>
       <PageHeader
         title="Enterprise Architecture"
-        subtitle="Business, Application, Data, Technology Architecture, Capability Map, dan Transformation Roadmap."
+        subtitle="TOGAF-Oriented Enterprise Architecture Repository"
       />
 
       <section className="grid gap-6">
@@ -29,6 +36,21 @@ export default function EnterpriseArchitecturePage() {
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
         <DataArchitecture />
         <TechnologyArchitecture />
+      </section>
+
+      <section className="mt-8 grid gap-6 lg:grid-cols-2">
+        <CapabilityBasedPlanning />
+        <ArchitecturePrinciples />
+      </section>
+
+      <section className="mt-8 grid gap-6 lg:grid-cols-2">
+        <StakeholderMap />
+        <ValueStreamMap />
+      </section>
+
+      <section className="mt-8 grid gap-6 lg:grid-cols-2">
+        <TargetArchitecture />
+        <ArchitectureGovernance />
       </section>
 
       <section className="mt-8">
