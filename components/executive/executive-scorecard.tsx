@@ -1,31 +1,67 @@
 import { KpiCard } from "../cards/kpi-card";
 
+import { outletSummary } from "../../data/outlets";
+import { institutionSummary } from "../../data/institutions";
+import { communitySummary } from "../../data/communities";
+import { roadmapSummary } from "../../data/roadmap";
+
 export function ExecutiveScorecard() {
-  return (
-    <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      <KpiCard
-        title="Market Health Score"
-        value="83%"
-        description="Kesehatan pasar berdasarkan LHR, TOC, dan coverage."
-      />
+const marketHealthScore = Math.round(
+(
+outletSummary.coveragePercentage +
+82 +
+85
+) / 3
+);
 
-      <KpiCard
-        title="Opportunity Score"
-        value="88%"
-        description="Potensi pengembangan outlet, institusi, dan komunitas."
-      />
+const opportunityScore = Math.round(
+(
+institutionSummary.totalInstitution / 5 +
+communitySummary.totalCommunity / 10 +
+outletSummary.totalNOO
+) / 3
+);
 
-      <KpiCard
-        title="Risk Score"
-        value="72%"
-        description="Evaluasi risiko market development."
-      />
+const riskScore = Math.round(
+(
+100 -
+outletSummary.totalNOO / 3
+)
+);
 
-      <KpiCard
-        title="Growth Readiness"
-        value="81%"
-        description="Kesiapan organisasi menjalankan roadmap pertumbuhan."
-      />
-    </section>
-  );
+const growthReadinessScore = Math.round(
+(
+marketHealthScore +
+opportunityScore +
+roadmapSummary.plannedMilestone * 10
+) / 3
+);
+
+return ( <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+<KpiCard
+title="Market Health Score"
+value={`${marketHealthScore}%`}
+description="Kesehatan pasar berdasarkan coverage, LHR, dan TOC."
+/>
+
+  <KpiCard
+    title="Opportunity Score"
+    value={`${opportunityScore}%`}
+    description="Potensi outlet, institusi, dan komunitas."
+  />
+
+  <KpiCard
+    title="Risk Score"
+    value={`${riskScore}%`}
+    description="Semakin tinggi semakin rendah risiko bisnis."
+  />
+
+  <KpiCard
+    title="Growth Readiness"
+    value={`${growthReadinessScore}%`}
+    description="Kesiapan organisasi menjalankan roadmap pertumbuhan."
+  />
+</section>
+
+);
 }
