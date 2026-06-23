@@ -7,6 +7,7 @@ import { KpiCard } from "../components/cards/kpi-card";
 import { SummaryCard } from "../components/cards/summary-card";
 
 import { ExecutiveScorecard } from "../components/executive/executive-scorecard";
+import { RiskDashboard } from "../components/executive/risk-dashboard";
 
 import { ExecutiveSummarySection } from "../components/analytics/executive-summary-section";
 
@@ -61,6 +62,10 @@ export default function HomePage() {
           title="Communities"
           value={communitySummary.totalCommunity}
         />
+      </section>
+
+      <section className="mt-8">
+        <RiskDashboard />
       </section>
 
       <section className="mt-8">
