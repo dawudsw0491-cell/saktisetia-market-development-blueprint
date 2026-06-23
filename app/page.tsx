@@ -1,9 +1,12 @@
 import { DashboardLayout } from "../components/layout/dashboard-layout";
 
 import { PageHeader } from "../components/shared/page-header";
+import { BusinessGlossary } from "../components/shared/business-glossary";
 
 import { KpiCard } from "../components/cards/kpi-card";
 import { SummaryCard } from "../components/cards/summary-card";
+
+import { ExecutiveSummarySection } from "../components/analytics/executive-summary-section";
 
 import { LhrBarChart } from "../components/charts/lhr-bar-chart";
 import { TocBarChart } from "../components/charts/toc-bar-chart";
@@ -54,6 +57,10 @@ export default function HomePage() {
         />
       </section>
 
+      <section className="mt-8">
+        <ExecutiveSummarySection />
+      </section>
+
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
         <LhrBarChart />
         <TocBarChart />
@@ -83,6 +90,10 @@ export default function HomePage() {
           title="Strategic Focus"
           content="Fokus utama pada NOO Development, Institutional Activation, dan Community Engagement."
         />
+      </section>
+
+      <section className="mt-8">
+        <BusinessGlossary category="executive" />
       </section>
     </DashboardLayout>
   );

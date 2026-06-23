@@ -1,8 +1,12 @@
 import { DashboardLayout } from "../../components/layout/dashboard-layout";
 
 import { PageHeader } from "../../components/shared/page-header";
+import { BusinessGlossary } from "../../components/shared/business-glossary";
 
 import { TerritoryKpiSection } from "../../components/analytics/territory-kpi-section";
+import { ExecutiveSummarySection } from "../../components/analytics/executive-summary-section";
+import { OpportunityMatrix } from "../../components/analytics/opportunity-matrix";
+import { StrategicInsightSection } from "../../components/analytics/strategic-insight-section";
 
 import { LhrBarChart } from "../../components/charts/lhr-bar-chart";
 import { TocBarChart } from "../../components/charts/toc-bar-chart";
@@ -20,9 +24,21 @@ export default function TerritoryIntelligencePage() {
 
       <TerritoryKpiSection />
 
+      <section className="mt-8">
+        <ExecutiveSummarySection />
+      </section>
+
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
         <LhrBarChart />
         <TocBarChart />
+      </section>
+
+      <section className="mt-8">
+        <OpportunityMatrix />
+      </section>
+
+      <section className="mt-8">
+        <StrategicInsightSection />
       </section>
 
       <section className="mt-8">
@@ -31,6 +47,10 @@ export default function TerritoryIntelligencePage() {
 
       <section className="mt-8">
         <TerritoryRankingTable />
+      </section>
+
+      <section className="mt-8">
+        <BusinessGlossary category="territory" />
       </section>
     </DashboardLayout>
   );
