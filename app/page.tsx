@@ -18,6 +18,8 @@ import { ManagementSummary } from "../components/reports/management-summary";
 import { StrategicReport } from "../components/reports/strategic-report";
 import { RecommendationReport } from "../components/reports/recommendation-report";
 
+import { GovernanceDashboard } from "../components/governance/governance-dashboard";
+
 import { LhrBarChart } from "../components/charts/lhr-bar-chart";
 import { TocBarChart } from "../components/charts/toc-bar-chart";
 import { TerritoryRankingChart } from "../components/charts/territory-ranking-chart";
@@ -32,7 +34,7 @@ export default function HomePage() {
     <DashboardLayout>
       <PageHeader
         title="Market Development Executive Dashboard"
-        subtitle="Territory Intelligence, Outlet Development, Institutional Market, Community Market, Event Strategy, Growth Roadmap, dan Executive Decision Support System."
+        subtitle="Territory Intelligence, Executive Intelligence, Management Reporting, Governance, dan Decision Support System."
       />
 
       <section className="mt-8">
@@ -126,6 +128,14 @@ export default function HomePage() {
           <StrategicReport />
           <RecommendationReport />
         </div>
+      </section>
+
+      <section className="mt-8">
+        <h2 className="mb-4 text-2xl font-bold">
+          Governance Layer
+        </h2>
+
+        <GovernanceDashboard />
       </section>
 
       <section className="mt-8">
