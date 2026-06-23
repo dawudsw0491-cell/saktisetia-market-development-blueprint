@@ -13,6 +13,11 @@ import { StrategicRecommendation } from "../components/executive/strategic-recom
 
 import { ExecutiveSummarySection } from "../components/analytics/executive-summary-section";
 
+import { ExecutiveReport } from "../components/reports/executive-report";
+import { ManagementSummary } from "../components/reports/management-summary";
+import { StrategicReport } from "../components/reports/strategic-report";
+import { RecommendationReport } from "../components/reports/recommendation-report";
+
 import { LhrBarChart } from "../components/charts/lhr-bar-chart";
 import { TocBarChart } from "../components/charts/toc-bar-chart";
 import { TerritoryRankingChart } from "../components/charts/territory-ranking-chart";
@@ -27,7 +32,7 @@ export default function HomePage() {
     <DashboardLayout>
       <PageHeader
         title="Market Development Executive Dashboard"
-        subtitle="Territory Intelligence, Outlet Development, Institutional Market, Community Market, Event Strategy, dan Growth Roadmap."
+        subtitle="Territory Intelligence, Outlet Development, Institutional Market, Community Market, Event Strategy, Growth Roadmap, dan Executive Decision Support System."
       />
 
       <section className="mt-8">
@@ -108,6 +113,19 @@ export default function HomePage() {
           title="Strategic Focus"
           content="Prioritas utama adalah Kertosono, Pare, Kediri Kota, dan Nganjuk Kota untuk akselerasi market development."
         />
+      </section>
+
+      <section className="mt-8">
+        <h2 className="mb-4 text-2xl font-bold">
+          Management Reporting Layer
+        </h2>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          <ExecutiveReport />
+          <ManagementSummary />
+          <StrategicReport />
+          <RecommendationReport />
+        </div>
       </section>
 
       <section className="mt-8">
