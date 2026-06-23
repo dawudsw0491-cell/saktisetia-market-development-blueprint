@@ -6,6 +6,9 @@ import { BusinessGlossary } from "../../components/shared/business-glossary";
 import { KpiCard } from "../../components/cards/kpi-card";
 import { SummaryCard } from "../../components/cards/summary-card";
 
+import { OutletOpportunityChart } from "../../components/charts/outlet-opportunity-chart";
+import { OutletGapTable } from "../../components/tables/outlet-gap-table";
+
 import { outletSummary } from "../../data/outlets";
 
 export default function OutletDevelopmentPage() {
@@ -13,61 +16,53 @@ export default function OutletDevelopmentPage() {
     <DashboardLayout>
       <PageHeader
         title="Outlet Development"
-        subtitle="Monitoring outlet performance, outlet expansion, dan market coverage."
+        subtitle="Monitoring outlet performance, expansion strategy, dan gap analysis."
       />
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="grid gap-4 md:grid-cols-5">
         <KpiCard
-          title="Registered Outlet (RO)"
+          title="Total Outlet"
+          value={outletSummary.totalOutlet}
+        />
+
+        <KpiCard
+          title="RO"
           value={outletSummary.totalRO}
         />
 
         <KpiCard
-          title="Active Outlet (AO)"
+          title="AO"
           value={outletSummary.totalAO}
         />
 
         <KpiCard
-          title="New Outlet Opening (NOO)"
+          title="NOO"
           value={outletSummary.totalNOO}
+        />
+
+        <KpiCard
+          title="Coverage %"
+          value={`${outletSummary.coveragePercentage}%`}
         />
       </section>
 
       <section className="mt-8">
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h3 className="mb-4 text-lg font-semibold">
-            Executive Summary
-          </h3>
+        <OutletOpportunityChart />
+      </section>
 
-          <p className="text-sm text-slate-600">
-            Outlet Development berfokus pada
-            peningkatan jumlah outlet aktif,
-            perluasan distribusi pasar,
-            serta akuisisi outlet baru pada
-            wilayah prioritas.
-          </p>
-        </div>
+      <section className="mt-8">
+        <OutletGapTable />
       </section>
 
       <section className="mt-8 grid gap-4 md:grid-cols-2">
         <SummaryCard
-          title="Outlet Expansion"
-          content="Fokus ekspansi outlet pada wilayah dengan Territory Score tinggi dan TOC tinggi."
+          title="Priority Expansion"
+          content="Kertosono dan Pare memiliki gap outlet terbesar dan menjadi prioritas ekspansi."
         />
 
         <SummaryCard
-          title="Outlet Activation"
-          content="Meningkatkan produktivitas outlet aktif melalui program aktivasi dan engagement."
-        />
-
-        <SummaryCard
-          title="Outlet Coverage"
-          content="Memastikan cakupan distribusi merata pada seluruh territory prioritas."
-        />
-
-        <SummaryCard
-          title="Growth Strategy"
-          content="Menggabungkan NOO Development dengan Community Activation dan Institutional Market."
+          title="Coverage Strategy"
+          content="Meningkatkan outlet coverage pada wilayah dengan TOC tinggi."
         />
       </section>
 

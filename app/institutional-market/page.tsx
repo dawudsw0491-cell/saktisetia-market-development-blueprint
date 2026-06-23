@@ -11,6 +11,14 @@ import {
   institutionOpportunities,
 } from "../../data/institutions";
 
+import {
+  InstitutionOpportunityChart,
+} from "../../components/charts/institution-opportunity-chart";
+
+import {
+  InstitutionOpportunityTable,
+} from "../../components/tables/institution-opportunity-table";
+
 export default function InstitutionalMarketPage() {
   const topOpportunity =
     institutionOpportunities[0];
@@ -55,40 +63,22 @@ export default function InstitutionalMarketPage() {
       </section>
 
       <section className="mt-8">
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h3 className="mb-4 text-lg font-semibold">
-            Executive Summary
-          </h3>
+        <InstitutionOpportunityChart />
+      </section>
 
-          <p className="text-sm text-slate-600">
-            Institutional Market merupakan salah satu
-            sumber pertumbuhan utama melalui kerja sama
-            dengan universitas, sekolah, pesantren,
-            instansi pemerintah, BUMN, dan perusahaan
-            swasta pada wilayah prioritas.
-          </p>
-        </div>
+      <section className="mt-8">
+        <InstitutionOpportunityTable />
       </section>
 
       <section className="mt-8 grid gap-4 md:grid-cols-2">
         <SummaryCard
           title="Top Opportunity Territory"
-          content={`${topOpportunity.territoryName} memiliki ${topOpportunity.institutionCount} institusi dengan opportunity score ${topOpportunity.opportunityScore}.`}
+          content={`${topOpportunity.territoryName} memiliki peluang institusi tertinggi dengan skor ${topOpportunity.opportunityScore}.`}
         />
 
         <SummaryCard
-          title="University Partnership"
-          content="Pengembangan kerja sama universitas untuk aktivasi mahasiswa dan event kampus."
-        />
-
-        <SummaryCard
-          title="School Activation"
-          content="Peningkatan program edukasi dan engagement pada jaringan sekolah prioritas."
-        />
-
-        <SummaryCard
-          title="Government & Corporate"
-          content="Meningkatkan kerja sama instansi pemerintah, BUMN, dan perusahaan swasta."
+          title="Institution Strategy"
+          content="Fokus pada universitas, sekolah, pesantren, instansi pemerintah, dan perusahaan swasta."
         />
       </section>
 
