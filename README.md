@@ -20,6 +20,35 @@ Market Development Intelligence Platform adalah portfolio enterprise-grade yang 
 Repository ini menggabungkan aplikasi dashboard berbasis Next.js dengan repository dokumentasi SDLC, governance, architecture, transformation, dan compliance yang selaras dengan standar internasional.
 
 ---
+# Screenshots
+
+## Executive Dashboard
+
+![Executive Dashboard](docs/screenshots/executive-dashboard.png)
+
+---
+
+## Territory Intelligence
+
+![Territory Intelligence](docs/screenshots/territory-intelligence.png)
+
+---
+
+## Enterprise Architecture
+
+![Enterprise Architecture](docs/screenshots/enterprise-architecture.png)
+
+---
+
+## Digital Transformation
+
+![Digital Transformation](docs/screenshots/digital-transformation.png)
+
+---
+
+## Growth Roadmap
+
+![Growth Roadmap](docs/screenshots/growth-roadmap.png)
 
 # Portfolio Highlights
 

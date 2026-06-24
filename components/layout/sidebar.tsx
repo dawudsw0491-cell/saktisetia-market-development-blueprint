@@ -29,6 +29,14 @@ const menuItems = [
     label: "Growth Roadmap",
     href: "/growth-roadmap",
   },
+  {
+    label: "Enterprise Architecture",
+    href: "/enterprise-architecture",
+  },
+  {
+    label: "Digital Transformation",
+    href: "/digital-transformation",
+  },
 ];
 
 export function Sidebar() {
@@ -40,7 +48,7 @@ export function Sidebar() {
         </h2>
 
         <p className="mt-1 text-sm text-slate-500">
-          Executive Intelligence Dashboard
+          Enterprise Portfolio Dashboard
         </p>
       </div>
 
